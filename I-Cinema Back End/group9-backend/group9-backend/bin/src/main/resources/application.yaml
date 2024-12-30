@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/movie_ms
+    userName: root
+    password: root
+  jpa: 
+    hibernate.ddl-auto: update
+    
+  application:
+    name: MovieMS
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        enabled: true
+        
+        
+        
+        
+        
+server:
+  port: 5000
+
+#Kindly add resilience property as mentioned in the QP Doc.
+#resilience4j.circuitbreaker:
+#  instances:
+#    sessionService:
+#      failureRateThreshold: 50
+#      slidingWindowSize: 10
+#      permittedNumberOfCallsInHalfOpenState: 5
+#      waitDurationInOpenState: 30s
+#      automaticTransitionFromOpenToHalfOpenEnabled: true
+#
+#General:
+#  EXCEPTION_MESSAGE: Something went wrong!
+#        
+#SessionService:
+#  ALREADY_ALLOCATED: The session has already been allocated.
+#  SESSIONS_NOT_FOUND: No sessions have been allocated to this batch. Please allocate sessions.
+#  EDUCATOR_UNAVAILABLE: The educator is currently booked for the requested date.
+#  INVALID_SESSION_DATE: Session start date must be before batch end date.
+#  INVALID_SESSION_END_DATE: The session end date must be after the session start date.
+#SessionAPI:
+#  ALLOCATION_SUCCESS: Session has been allocated successfully for batch ID

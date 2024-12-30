@@ -1,0 +1,31 @@
+-- Drop the table if it already exists
+DROP TABLE IF EXISTS movie_ms;
+
+-- Create the movie_ms table
+CREATE TABLE movie_ms (
+    movie_id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,  -- Primary key with auto increment
+    created_at DATE,                                  -- Date when the movie was created
+    last_modified_at DATE,                            -- Date when the movie details were last modified
+    censor_rating VARCHAR(255),                       -- Censor rating (e.g., PG, R, etc.)
+    description VARCHAR(255),                         -- Short description of the movie
+    genre VARCHAR(255),                               -- Genre of the movie (e.g., Action, Drama)
+    img_url VARCHAR(255),                             -- URL for the movie image/poster
+    language VARCHAR(255),                            -- Language of the movie
+    rating DOUBLE,                                    -- Rating of the movie
+    release_date DATE,                                -- Release date of the movie
+    title VARCHAR(255)                                -- Title of the movie
+);
+
+-- Insert sample data into the movie_ms table
+INSERT INTO movie_ms.movie (created_at, last_modified_at, censor_rating, description, genre, img_url, language, rating, release_date, title)
+VALUES
+('2024-11-01', '2024-11-01', 'PG-13', 'A thrilling adventure set in a dystopian future.', 'Action', 'https://example.com/img1.jpg', 'English', 7.5, '2023-08-15', 'The Last Stand'),
+('2024-11-02', '2024-11-02', 'R', 'A deep emotional journey exploring love and loss.', 'Drama', 'https://example.com/img2.jpg', 'English', 8.2, '2022-06-05', 'Echoes of the Heart'),
+('2024-11-03', '2024-11-03', 'PG', 'A sci-fi thriller about time travel and paradoxes.', 'Science Fiction', 'https://example.com/img3.jpg', 'English', 6.4, '2021-12-10', 'Chrono Shift'),
+('2024-11-04', '2024-11-04', 'G', 'A heartwarming story of friendship and survival.', 'Adventure', 'https://example.com/img4.jpg', 'English', 9.0, '2020-11-18', 'Bound by the Sea'),
+('2024-11-05', '2024-11-05', 'R', 'A mysterious detective uncovers a dark conspiracy.', 'Mystery', 'https://example.com/img5.jpg', 'English', 7.1, '2024-03-25', 'The Silent Witness'),
+('2024-11-06', '2024-11-06', 'PG-13', 'A comedy about a group of misfit friends trying to make it big in Hollywood.', 'Comedy', 'https://example.com/img6.jpg', 'English', 8.7, '2024-05-13', 'Stars in the Making'),
+('2024-11-07', '2024-11-07', 'PG', 'A family-friendly movie about a magical forest.', 'Fantasy', 'https://example.com/img7.jpg', 'English', 6.8, '2023-09-22', 'The Enchanted Grove'),
+('2024-11-08', '2024-11-08', 'R', 'A historical drama about a real-life hero from the past.', 'History', 'https://example.com/img8.jpg', 'English', 7.9, '2023-07-07', 'Warrior of the Ages'),
+('2024-11-09', '2024-11-09', 'PG-13', 'A thriller about an undercover agent caught in a web of lies.', 'Thriller', 'https://example.com/img9.jpg', 'English', 8.3, '2022-09-15', 'The Hidden Agent'),
+('2024-11-10', '2024-11-10', 'PG', 'A quirky animated movie that challenges the norms of storytelling.', 'Animation', 'https://example.com/img10.jpg', 'English', 7.6, '2023-04-05', 'Unusual Tales');

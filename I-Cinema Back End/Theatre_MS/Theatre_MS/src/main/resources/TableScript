@@ -1,0 +1,26 @@
+-- Drop the table if it already exists
+DROP TABLE IF EXISTS theatre;
+
+-- Create the theatre table
+CREATE TABLE theatre (
+    theatre_id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,  -- Primary key with auto increment
+    created_at DATE,                                  -- Date when the theatre record was created
+    last_modified_at DATE,                            -- Date when the theatre record was last modified
+    movie_id BIGINT(20),                              -- Foreign key for the movie associated with the theatre
+    theatre_location VARCHAR(255),                     -- Location of the theatre
+    theatre_name VARCHAR(255)                          -- Name of the theatre
+);
+
+-- Insert sample data into the theatre table
+INSERT INTO theatre (created_at, last_modified_at, theatre_location, theatre_name)
+VALUES
+('2024-11-01', '2024-11-01',  'New York, NY', 'Central Cinema'),
+('2024-11-02', '2024-11-02',  'Los Angeles, CA', 'Sunset Boulevard Theatre'),
+('2024-11-03', '2024-11-03',  'Chicago, IL', 'Lakeview Cinemas'),
+('2024-11-04', '2024-11-04',  'San Francisco, CA', 'Golden Gate Theatre'),
+('2024-11-05', '2024-11-05',  'Austin, TX', 'Alamo Drafthouse'),
+('2024-11-06', '2024-11-06',  'Miami, FL', 'Coral Gables Cinema'),
+('2024-11-07', '2024-11-07',  'Boston, MA', 'Fenway Theatre'),
+('2024-11-08', '2024-11-08',  'Seattle, WA', 'Pike Place Cinemas'),
+('2024-11-09', '2024-11-09',  'Dallas, TX', 'Theatre District Cinemas'),
+('2024-11-10', '2024-11-10',  'Las Vegas, NV', 'Silver Screen Theatre');

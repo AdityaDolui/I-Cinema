@@ -1,0 +1,21 @@
+spring: 
+  datasource: 
+    driverClassName: com.mysql.cj.jdbc.Driver 
+    url: jdbc:mysql://localhost:3306/show_db
+    username: root
+    password: Infy@123
+  jpa: 
+    hibernate.ddl-auto: update
+    database-platform : org.hibernate.dialect.MySQL8Dialect
+    
+  application:
+    name: ShowMs
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        enabled: true
+    
+    
+server:
+  port: 5003
